@@ -53,7 +53,6 @@
         font-size: 14px;
         fill: var(--comment-color);
         text-anchor: middle;
-        font-style: italic;
         }
     </style>
 
@@ -65,15 +64,17 @@
         <text class="font-sans title-text">{{ persona_title }}</text>
     </g>
 
+    {% if status_label %}
     <g transform="translate(470, 33)">
         <rect width="100" height="24" class="badge-rect"/>
         <text x="50" y="16" class="font-mono badge-text">{{ status_label }}</text>
     </g>
+    {% endif %}
 
     <line x1="30" y1="75" x2="570" y2="75" class="divider-line"/>
 
     <text x="300" y="110" class="font-segoe comment-text">
-        <tspan x="300" dy="0">"{{ comment_line_1 }}"</tspan>
-        <tspan x="300" dy="1.4em">"{{ comment_line_2 }}"</tspan>
+        <tspan x="300" dy="0">{{ comment_line_1 }}</tspan>
+        <tspan x="300" dy="1.4em">{{ comment_line_2 }}</tspan>
     </text>
 </svg>
