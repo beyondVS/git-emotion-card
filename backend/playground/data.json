@@ -1,0 +1,1947 @@
+[
+  {
+    "id": "5912907437",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/1",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/1/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/1/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/1/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/1",
+        "id": 289559276,
+        "node_id": "MDU6SXNzdWUyODk1NTkyNzY=",
+        "number": 1,
+        "title": "This isn't an actual issue, I just wanted to say hi to Great Torvalds!",
+        "user": {
+          "login": "dupl10",
+          "id": 24918198,
+          "node_id": "MDQ6VXNlcjI0OTE4MTk4",
+          "avatar_url": "https://avatars.githubusercontent.com/u/24918198?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/dupl10",
+          "html_url": "https://github.com/dupl10",
+          "followers_url": "https://api.github.com/users/dupl10/followers",
+          "following_url": "https://api.github.com/users/dupl10/following{/other_user}",
+          "gists_url": "https://api.github.com/users/dupl10/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/dupl10/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/dupl10/subscriptions",
+          "organizations_url": "https://api.github.com/users/dupl10/orgs",
+          "repos_url": "https://api.github.com/users/dupl10/repos",
+          "events_url": "https://api.github.com/users/dupl10/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/dupl10/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 45,
+        "created_at": "2018-01-18T09:29:28Z",
+        "updated_at": "2026-01-19T19:34:13Z",
+        "closed_at": "2026-01-19T19:34:13Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "this editor does not support Chinese very well...",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/1/reactions",
+          "total_count": 140,
+          "+1": 60,
+          "-1": 21,
+          "laugh": 14,
+          "hooray": 13,
+          "confused": 10,
+          "heart": 22,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/1/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:34:14Z"
+  },
+  {
+    "id": "5912904489",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/7",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/7/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/7/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/7/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/7",
+        "id": 309628117,
+        "node_id": "MDU6SXNzdWUzMDk2MjgxMTc=",
+        "number": 7,
+        "title": "What gives open source the right to take away root user?",
+        "user": {
+          "login": "SDRausty",
+          "id": 27742457,
+          "node_id": "MDQ6VXNlcjI3NzQyNDU3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/27742457?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/SDRausty",
+          "html_url": "https://github.com/SDRausty",
+          "followers_url": "https://api.github.com/users/SDRausty/followers",
+          "following_url": "https://api.github.com/users/SDRausty/following{/other_user}",
+          "gists_url": "https://api.github.com/users/SDRausty/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/SDRausty/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/SDRausty/subscriptions",
+          "organizations_url": "https://api.github.com/users/SDRausty/orgs",
+          "repos_url": "https://api.github.com/users/SDRausty/repos",
+          "events_url": "https://api.github.com/users/SDRausty/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/SDRausty/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 5,
+        "created_at": "2018-03-29T05:52:54Z",
+        "updated_at": "2026-01-19T19:34:02Z",
+        "closed_at": "2026-01-19T19:34:02Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "@torvalds thank you for inspiring the Linux movement.  I  would place this issue in a better place if I knew where to; This question is simple, \"What gives open source the right to take away root user?\"  https://github.com/termux/termux-app/issues/507#issuecomment-377126214 specifically in regard to the Android operating system.  Is Android the most popular derivative of Linux today with billions of users?  Probably.\r\n\r\nOne of many time and resource consuming examples: the way Android selects and corrects text to be recorrected and reselect repeatedly by the user is inline with no root user login to Android rational.\r\n\r\nCheers :coffee: 🎸\r\n\r\nPS `em`  builds beautifully in an Android smartphone through Arch Linux in Termux PRoot with warnings:\r\n\r\n[![screenshot_20180329-024010](https://user-images.githubusercontent.com/27742457/38073817-950d79cc-32fa-11e8-8622-bf3670623744.png)](https://termuxarch.github.io/TermuxArch/)\r\n",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/7/reactions",
+          "total_count": 2,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 2
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/7/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:34:03Z"
+  },
+  {
+    "id": "5912899906",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/22",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/22/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/22/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/22/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/22",
+        "id": 439749024,
+        "node_id": "MDU6SXNzdWU0Mzk3NDkwMjQ=",
+        "number": 22,
+        "title": "what is the rationale for not having a undo command?",
+        "user": {
+          "login": "dzklaim",
+          "id": 1281848,
+          "node_id": "MDQ6VXNlcjEyODE4NDg=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1281848?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/dzklaim",
+          "html_url": "https://github.com/dzklaim",
+          "followers_url": "https://api.github.com/users/dzklaim/followers",
+          "following_url": "https://api.github.com/users/dzklaim/following{/other_user}",
+          "gists_url": "https://api.github.com/users/dzklaim/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/dzklaim/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/dzklaim/subscriptions",
+          "organizations_url": "https://api.github.com/users/dzklaim/orgs",
+          "repos_url": "https://api.github.com/users/dzklaim/repos",
+          "events_url": "https://api.github.com/users/dzklaim/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/dzklaim/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2019-05-02T19:24:42Z",
+        "updated_at": "2026-01-19T19:33:43Z",
+        "closed_at": "2026-01-19T19:33:43Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "or am I missing something?",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/22/reactions",
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/22/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:33:45Z"
+  },
+  {
+    "id": "5912896512",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/28",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/28/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/28/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/28/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/28",
+        "id": 532442046,
+        "node_id": "MDU6SXNzdWU1MzI0NDIwNDY=",
+        "number": 28,
+        "title": "Virtual routing and forwarding(VRF) implementation in Linux",
+        "user": {
+          "login": "JADAUN-SINGH",
+          "id": 29775680,
+          "node_id": "MDQ6VXNlcjI5Nzc1Njgw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/29775680?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/JADAUN-SINGH",
+          "html_url": "https://github.com/JADAUN-SINGH",
+          "followers_url": "https://api.github.com/users/JADAUN-SINGH/followers",
+          "following_url": "https://api.github.com/users/JADAUN-SINGH/following{/other_user}",
+          "gists_url": "https://api.github.com/users/JADAUN-SINGH/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/JADAUN-SINGH/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/JADAUN-SINGH/subscriptions",
+          "organizations_url": "https://api.github.com/users/JADAUN-SINGH/orgs",
+          "repos_url": "https://api.github.com/users/JADAUN-SINGH/repos",
+          "events_url": "https://api.github.com/users/JADAUN-SINGH/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/JADAUN-SINGH/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2019-12-04T04:26:03Z",
+        "updated_at": "2026-01-19T19:33:30Z",
+        "closed_at": "2026-01-19T19:33:30Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "Hello @torvalds ,\r\nI search most of the place but i am unable to find out the services of VRF used in linux.\r\nCan you please tell me the services of VRF and also the methods so I can integrate this VRF services in Linux.\r\n\r\nThanks",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/28/reactions",
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/28/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:33:32Z"
+  },
+  {
+    "id": "7621489697",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "repository_id": 117900805,
+      "push_id": 29916785696,
+      "ref": "refs/heads/master",
+      "head": "5d36b7f22c00874ee20fa837cb12197d259d7620",
+      "before": "008d370182c026fb66cd73d86ae615d5249df3a1"
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:32:53Z",
+    "message": "Add LICENSE and README.md files\n\nMainly to warn people away from this project.\n\n   \"Sometimes updating crusty code is\n    easier than updating yourself\"\n                       - Linus\n\nI should just teach my fingers other editors, but instead I end up\nkeeping this project just barely limping along.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "5912488619",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/30",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/30/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/30/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/30/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/30",
+        "id": 637349856,
+        "node_id": "MDU6SXNzdWU2MzczNDk4NTY=",
+        "number": 30,
+        "title": "What license does uemacs use?",
+        "user": {
+          "login": "ghost",
+          "id": 10137,
+          "node_id": "MDQ6VXNlcjEwMTM3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/10137?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/ghost",
+          "html_url": "https://github.com/ghost",
+          "followers_url": "https://api.github.com/users/ghost/followers",
+          "following_url": "https://api.github.com/users/ghost/following{/other_user}",
+          "gists_url": "https://api.github.com/users/ghost/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/ghost/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/ghost/subscriptions",
+          "organizations_url": "https://api.github.com/users/ghost/orgs",
+          "repos_url": "https://api.github.com/users/ghost/repos",
+          "events_url": "https://api.github.com/users/ghost/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/ghost/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 9,
+        "created_at": "2020-06-11T22:05:40Z",
+        "updated_at": "2026-01-19T19:06:14Z",
+        "closed_at": "2026-01-19T19:06:14Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "that is the question",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/30/reactions",
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/30/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:06:15Z"
+  },
+  {
+    "id": "5912483141",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/49",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/49/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/49/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/49/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/49",
+        "id": 3087925444,
+        "node_id": "I_kwDOBwcGBc64DgDE",
+        "number": 49,
+        "title": "how do I run it?!",
+        "user": {
+          "login": "booga599",
+          "id": 193230231,
+          "node_id": "U_kgDOC4R1lw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/193230231?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/booga599",
+          "html_url": "https://github.com/booga599",
+          "followers_url": "https://api.github.com/users/booga599/followers",
+          "following_url": "https://api.github.com/users/booga599/following{/other_user}",
+          "gists_url": "https://api.github.com/users/booga599/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/booga599/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/booga599/subscriptions",
+          "organizations_url": "https://api.github.com/users/booga599/orgs",
+          "repos_url": "https://api.github.com/users/booga599/repos",
+          "events_url": "https://api.github.com/users/booga599/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/booga599/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2025-05-24T02:52:58Z",
+        "updated_at": "2026-01-19T19:05:51Z",
+        "closed_at": "2026-01-19T19:05:51Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "- how do I run because there's no file to run it do i have to put it in a code editor and run it?",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/49/reactions",
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/49/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:05:52Z"
+  },
+  {
+    "id": "5912481061",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/52",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/52/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/52/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/52/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/52",
+        "id": 3602282816,
+        "node_id": "I_kwDOBwcGBc7WtnlA",
+        "number": 52,
+        "title": "Number of modes not updated after removal of half utf-8 support",
+        "user": {
+          "login": "dosmanak",
+          "id": 6140849,
+          "node_id": "MDQ6VXNlcjYxNDA4NDk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/6140849?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/dosmanak",
+          "html_url": "https://github.com/dosmanak",
+          "followers_url": "https://api.github.com/users/dosmanak/followers",
+          "following_url": "https://api.github.com/users/dosmanak/following{/other_user}",
+          "gists_url": "https://api.github.com/users/dosmanak/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/dosmanak/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/dosmanak/subscriptions",
+          "organizations_url": "https://api.github.com/users/dosmanak/orgs",
+          "repos_url": "https://api.github.com/users/dosmanak/repos",
+          "events_url": "https://api.github.com/users/dosmanak/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/dosmanak/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2025-11-07T22:45:40Z",
+        "updated_at": "2026-01-19T19:05:42Z",
+        "closed_at": "2026-01-19T19:05:42Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "https://github.com/torvalds/uemacs/blob/1cdcf9df88144049750116e36fe20c8c39fa2517/estruct.h#L475\n\nNumber of modes was added in history when the half utf-8 mode was introduced.\n\nLater the half utf-8 has been remove, but the number of modes has not be updated.\n\n",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/52/reactions",
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/52/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:05:44Z"
+  },
+  {
+    "id": "5912477114",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/51",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/51/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/51/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/51/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/51",
+        "id": 3265794022,
+        "node_id": "I_kwDOBwcGBc7CqA_m",
+        "number": 51,
+        "title": "Potential security concern: Risk of being hacked via malicious code sent through email",
+        "user": {
+          "login": "ghost",
+          "id": 10137,
+          "node_id": "MDQ6VXNlcjEwMTM3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/10137?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/ghost",
+          "html_url": "https://github.com/ghost",
+          "followers_url": "https://api.github.com/users/ghost/followers",
+          "following_url": "https://api.github.com/users/ghost/following{/other_user}",
+          "gists_url": "https://api.github.com/users/ghost/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/ghost/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/ghost/subscriptions",
+          "organizations_url": "https://api.github.com/users/ghost/orgs",
+          "repos_url": "https://api.github.com/users/ghost/repos",
+          "events_url": "https://api.github.com/users/ghost/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/ghost/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2025-07-26T15:21:41Z",
+        "updated_at": "2026-01-19T19:05:26Z",
+        "closed_at": "2026-01-19T19:05:26Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "There is a potential security concern for users of this repository. If someone sends you an email containing malicious code, and you use that code with this software, you could be at risk of being hacked. Hackers could exploit this by sending code snippets that, when run or opened in uemacs, might compromise your system. \n\nI recommend users exercise caution when receiving code from untrusted sources and avoid running or opening unsolicited code in uemacs.\n",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/51/reactions",
+          "total_count": 5,
+          "+1": 0,
+          "-1": 5,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/51/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:05:27Z"
+  },
+  {
+    "id": "5912473551",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/38",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/38/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/38/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/38/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/38",
+        "id": 1534563535,
+        "node_id": "I_kwDOBwcGBc5bd5TP",
+        "number": 38,
+        "title": "unwanted trailing blank line on save",
+        "user": {
+          "login": "NetwarSystem",
+          "id": 33647680,
+          "node_id": "MDQ6VXNlcjMzNjQ3Njgw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/33647680?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/NetwarSystem",
+          "html_url": "https://github.com/NetwarSystem",
+          "followers_url": "https://api.github.com/users/NetwarSystem/followers",
+          "following_url": "https://api.github.com/users/NetwarSystem/following{/other_user}",
+          "gists_url": "https://api.github.com/users/NetwarSystem/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/NetwarSystem/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/NetwarSystem/subscriptions",
+          "organizations_url": "https://api.github.com/users/NetwarSystem/orgs",
+          "repos_url": "https://api.github.com/users/NetwarSystem/repos",
+          "events_url": "https://api.github.com/users/NetwarSystem/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/NetwarSystem/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2023-01-16T09:13:52Z",
+        "updated_at": "2026-01-19T19:05:12Z",
+        "closed_at": "2026-01-19T19:05:12Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "\r\nPlease forgive my impertinence, I'm a MicroEMACS noob - didn't start using it until the fall of 1986.\r\n\r\nI'm running 4.0.15 on various Linux distros and my work involves a lot of csv files that are getting awk/grep/sed treatment. When I save a file I've edited with MicroEMACS I often find a single newline appended, even if I went nowhere near the end of the file. If I jump to the end, remove the newline, and leave the cursor at the end of the final line with text then I get the expected result.\r\n\r\nThis should not be difficult to reproduce, I encounter it several times a day. I do not think it's universal, but I can not yet describe the sort of editing that triggers this event.",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/38/reactions",
+          "total_count": 1,
+          "+1": 1,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/38/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:05:13Z"
+  },
+  {
+    "id": "5912463770",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/9",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/9/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/9/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/9/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/9",
+        "id": 345498331,
+        "node_id": "MDU6SXNzdWUzNDU0OTgzMzE=",
+        "number": 9,
+        "title": "Bigger filenames should be limited to 127 for now",
+        "user": {
+          "login": "rfivet",
+          "id": 28284829,
+          "node_id": "MDQ6VXNlcjI4Mjg0ODI5",
+          "avatar_url": "https://avatars.githubusercontent.com/u/28284829?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/rfivet",
+          "html_url": "https://github.com/rfivet",
+          "followers_url": "https://api.github.com/users/rfivet/followers",
+          "following_url": "https://api.github.com/users/rfivet/following{/other_user}",
+          "gists_url": "https://api.github.com/users/rfivet/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/rfivet/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/rfivet/subscriptions",
+          "organizations_url": "https://api.github.com/users/rfivet/orgs",
+          "repos_url": "https://api.github.com/users/rfivet/repos",
+          "events_url": "https://api.github.com/users/rfivet/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/rfivet/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 2,
+        "created_at": "2018-07-29T03:39:19Z",
+        "updated_at": "2026-01-19T19:04:30Z",
+        "closed_at": "2026-01-19T19:04:30Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "I did a quick recheck after last commit setting up NFILEN to 256\r\n\r\n- **em** crashes when called with filename argument longer than 255 [easy to fix with mystrscpy instead of strcpy]\r\n\r\n- as **em** variables size are limited to 127+1, longer filenames will create problems with macroes [ex: $cfname holds the filename of current buffer]\r\n\r\n- write-file command can be called with strings up to and longer than 255, so **em** will create files having up to 255 characters, but can't open them either with find-file command or as argument from command line [LOCK ERROR: cannot access lock file - File name too long]\r\n\r\n- filenames completion works, a manual display refresh [^L] is necessary to clean up the display.\r\n\r\nattached is a simple **em** script I used to generate the files for test: [strip .txt extension]\r\n[tstfnam.cmd.txt](https://github.com/torvalds/uemacs/files/2238479/tstfnam.cmd.txt)\r\n\r\nI would suggest to limit NFILEN to 128 for now and fix the strcpy of filename arg issue.\r\n\r\n\r\n\r\n",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/9/reactions",
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/9/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:04:32Z"
+  },
+  {
+    "id": "5912459614",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/40",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/40/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/40/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/40/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/40",
+        "id": 2207725242,
+        "node_id": "I_kwDOBwcGBc6Dlza6",
+        "number": 40,
+        "title": "config ",
+        "user": {
+          "login": "TESTSIGNUP123",
+          "id": 32506366,
+          "node_id": "MDQ6VXNlcjMyNTA2MzY2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/32506366?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/TESTSIGNUP123",
+          "html_url": "https://github.com/TESTSIGNUP123",
+          "followers_url": "https://api.github.com/users/TESTSIGNUP123/followers",
+          "following_url": "https://api.github.com/users/TESTSIGNUP123/following{/other_user}",
+          "gists_url": "https://api.github.com/users/TESTSIGNUP123/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/TESTSIGNUP123/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/TESTSIGNUP123/subscriptions",
+          "organizations_url": "https://api.github.com/users/TESTSIGNUP123/orgs",
+          "repos_url": "https://api.github.com/users/TESTSIGNUP123/repos",
+          "events_url": "https://api.github.com/users/TESTSIGNUP123/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/TESTSIGNUP123/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 2,
+        "created_at": "2024-03-26T09:34:36Z",
+        "updated_at": "2026-01-19T19:04:12Z",
+        "closed_at": "2026-01-19T19:04:12Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "linus Please tell me how to configure and enable line numbers in uemacs",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/40/reactions",
+          "total_count": 6,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 6,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/40/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:04:14Z"
+  },
+  {
+    "id": "5912424814",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/29",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/29/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/29/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/29/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/29",
+        "id": 546040571,
+        "node_id": "MDU6SXNzdWU1NDYwNDA1NzE=",
+        "number": 29,
+        "title": "I want to know something?",
+        "user": {
+          "login": "Lewisliu111",
+          "id": 35888874,
+          "node_id": "MDQ6VXNlcjM1ODg4ODc0",
+          "avatar_url": "https://avatars.githubusercontent.com/u/35888874?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Lewisliu111",
+          "html_url": "https://github.com/Lewisliu111",
+          "followers_url": "https://api.github.com/users/Lewisliu111/followers",
+          "following_url": "https://api.github.com/users/Lewisliu111/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Lewisliu111/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Lewisliu111/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Lewisliu111/subscriptions",
+          "organizations_url": "https://api.github.com/users/Lewisliu111/orgs",
+          "repos_url": "https://api.github.com/users/Lewisliu111/repos",
+          "events_url": "https://api.github.com/users/Lewisliu111/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Lewisliu111/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 3,
+        "created_at": "2020-01-07T02:19:12Z",
+        "updated_at": "2026-01-19T19:01:48Z",
+        "closed_at": "2026-01-19T19:01:48Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "Who merges pull request in this repository? is linus? or others?",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/29/reactions",
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/29/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:01:48Z"
+  },
+  {
+    "id": "5912405541",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/34",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/34/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/34/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/34/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/34",
+        "id": 1073075082,
+        "node_id": "I_kwDOBwcGBc4_9dOK",
+        "number": 34,
+        "title": "Good job",
+        "user": {
+          "login": "rozhanpaudel",
+          "id": 40520577,
+          "node_id": "MDQ6VXNlcjQwNTIwNTc3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/40520577?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/rozhanpaudel",
+          "html_url": "https://github.com/rozhanpaudel",
+          "followers_url": "https://api.github.com/users/rozhanpaudel/followers",
+          "following_url": "https://api.github.com/users/rozhanpaudel/following{/other_user}",
+          "gists_url": "https://api.github.com/users/rozhanpaudel/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/rozhanpaudel/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/rozhanpaudel/subscriptions",
+          "organizations_url": "https://api.github.com/users/rozhanpaudel/orgs",
+          "repos_url": "https://api.github.com/users/rozhanpaudel/repos",
+          "events_url": "https://api.github.com/users/rozhanpaudel/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/rozhanpaudel/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2021-12-07T08:42:59Z",
+        "updated_at": "2026-01-19T19:00:30Z",
+        "closed_at": "2026-01-19T19:00:30Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "Hope to see you better",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/34/reactions",
+          "total_count": 7,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 3,
+          "rocket": 4,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/34/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:00:31Z"
+  },
+  {
+    "id": "5912400368",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/uemacs/issues/48",
+        "repository_url": "https://api.github.com/repos/torvalds/uemacs",
+        "labels_url": "https://api.github.com/repos/torvalds/uemacs/issues/48/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/uemacs/issues/48/comments",
+        "events_url": "https://api.github.com/repos/torvalds/uemacs/issues/48/events",
+        "html_url": "https://github.com/torvalds/uemacs/issues/48",
+        "id": 3032409901,
+        "node_id": "I_kwDOBwcGBc60vuct",
+        "number": 48,
+        "title": "bash",
+        "user": {
+          "login": "ghost",
+          "id": 10137,
+          "node_id": "MDQ6VXNlcjEwMTM3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/10137?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/ghost",
+          "html_url": "https://github.com/ghost",
+          "followers_url": "https://api.github.com/users/ghost/followers",
+          "following_url": "https://api.github.com/users/ghost/following{/other_user}",
+          "gists_url": "https://api.github.com/users/ghost/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/ghost/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/ghost/subscriptions",
+          "organizations_url": "https://api.github.com/users/ghost/orgs",
+          "repos_url": "https://api.github.com/users/ghost/repos",
+          "events_url": "https://api.github.com/users/ghost/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/ghost/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 1,
+        "created_at": "2025-04-30T20:13:39Z",
+        "updated_at": "2026-01-19T19:00:11Z",
+        "closed_at": "2026-01-19T19:00:11Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "I need to create a .sh program that creates a file named like this:\n\n`\\*\\\\'\"Best School\"\\'\\\\*$\\?\\*\\*\\*\\*\\*:)`\n\nthe constraints are as follows: \n\ndo not use filmame\nThe script should be 2 lines long. (wc -l 7-file should print 2.)\nThe script must end with a \"new line\"\nThe first line must be exactly: #!/bin/bash\nYou are not allowed to use backticks, &&, ||, or ;\nThe file must be executable.\nYou are not allowed to use sed or awk.",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/uemacs/issues/48/reactions",
+          "total_count": 13,
+          "+1": 0,
+          "-1": 13,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/uemacs/issues/48/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-19T19:00:12Z"
+  },
+  {
+    "id": "7620741436",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 117900805,
+      "name": "torvalds/uemacs",
+      "url": "https://api.github.com/repos/torvalds/uemacs"
+    },
+    "payload": {
+      "repository_id": 117900805,
+      "push_id": 29916036216,
+      "ref": "refs/heads/master",
+      "head": "008d370182c026fb66cd73d86ae615d5249df3a1",
+      "before": "1cdcf9df88144049750116e36fe20c8c39fa2517"
+    },
+    "public": true,
+    "created_at": "2026-01-19T18:58:10Z",
+    "message": "Use the preexisting 'Spell' mode for spell check\n\nAccording to the readme, that spell mode comes from some odd 'MicroSPELL\n1.0' thing, whatever that is. That was back in the '80s, and the only\nsign of it in the source code was the MDSPELL mode flag, along with the\nparsing of that mode.\n\nBut since we do have that mode flag and parsing, just use it to gate the\nnew spell checking.\n\nUpdate the emacs.rc file to enable it by default when loading a file,\nalthough I might make it depend on filename etc if I get too annoyed by\nthe stateless spell checking for source code.\n\nFor example, maybe I could enable it by default only for COMMIT_EDITMSG\nfiles. Hmm? With the mode flag, that is trivial to do.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "7618585211",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1137038093,
+      "name": "torvalds/HunspellColorize",
+      "url": "https://api.github.com/repos/torvalds/HunspellColorize"
+    },
+    "payload": {
+      "repository_id": 1137038093,
+      "push_id": 29913878400,
+      "ref": "refs/heads/main",
+      "head": "fcf2283690a7abb61c135389b933d349ce7415a9",
+      "before": "0d99d1c88a985e3ea9c189942dc2327924b25ddf"
+    },
+    "public": true,
+    "created_at": "2026-01-19T17:25:41Z",
+    "message": "Use pkg-config to find hunspell instead of hardcoding it\n\nAlso add -Wall, and fix a compiler warning that showed up as a result.\n\nIt's all just slightly less hacky this way.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "7593945715",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1137038093,
+      "name": "torvalds/HunspellColorize",
+      "url": "https://api.github.com/repos/torvalds/HunspellColorize"
+    },
+    "payload": {
+      "repository_id": 1137038093,
+      "push_id": 29889224222,
+      "ref": "refs/heads/main",
+      "head": "0d99d1c88a985e3ea9c189942dc2327924b25ddf",
+      "before": "d2f2439ecf5d5c70dbc25f635729a9ea17fe61a3"
+    },
+    "public": true,
+    "created_at": "2026-01-19T00:05:27Z",
+    "message": "Update README about colorization..\n\nI fixed the most obvious interaction with the ANSI color sequences that\ncome from git colorizing its output, and this actually works\nsurprisingly well.  I've been using this _while_ looking at doing the\nhunspell thing in uemacs, and I don't actually hate it.\n\nYes, it ends up bold-facing various random variable names and other\nthings that aren't proper words, but it's less distracting than I\nthought it would be.\n\nI'll still continue to look at uemacs - because catching this while\nwriting commit messages is better than having \"git log\" show them later,\nbut I think I might actually end up using both.\n\nI continue to be surprised that google didn't show any pre-existing\nversion of this silly tool.  The default output from 'hunspell' (and\n'aspell' and friends - I don't want to claim that hunspell would be\nparticularly bad, quite the reverse) has always struck me as fairly\npointless.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "5891096719",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1137038093,
+      "name": "torvalds/HunspellColorize",
+      "url": "https://api.github.com/repos/torvalds/HunspellColorize"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/HunspellColorize/issues/2",
+        "repository_url": "https://api.github.com/repos/torvalds/HunspellColorize",
+        "labels_url": "https://api.github.com/repos/torvalds/HunspellColorize/issues/2/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/HunspellColorize/issues/2/comments",
+        "events_url": "https://api.github.com/repos/torvalds/HunspellColorize/issues/2/events",
+        "html_url": "https://github.com/torvalds/HunspellColorize/issues/2",
+        "id": 3827457858,
+        "node_id": "I_kwDOQ8XTDc7kIl9C",
+        "number": 2,
+        "title": "Have you considered using an LLM",
+        "user": {
+          "login": "Marxist-Leninist",
+          "id": 31905382,
+          "node_id": "MDQ6VXNlcjMxOTA1Mzgy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/31905382?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Marxist-Leninist",
+          "html_url": "https://github.com/Marxist-Leninist",
+          "followers_url": "https://api.github.com/users/Marxist-Leninist/followers",
+          "following_url": "https://api.github.com/users/Marxist-Leninist/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Marxist-Leninist/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Marxist-Leninist/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Marxist-Leninist/subscriptions",
+          "organizations_url": "https://api.github.com/users/Marxist-Leninist/orgs",
+          "repos_url": "https://api.github.com/users/Marxist-Leninist/repos",
+          "events_url": "https://api.github.com/users/Marxist-Leninist/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Marxist-Leninist/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 2,
+        "created_at": "2026-01-18T23:13:54Z",
+        "updated_at": "2026-01-18T23:53:26Z",
+        "closed_at": "2026-01-18T23:53:26Z",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "https://livebench.ai/#/\n\nYou wrote a C program, a Makefile, integrated hunspell, wrapped less, dealt with ANSI escape sequences...\n\nWhen you could just:\n```bash\nexport GIT_PAGER=\"your-text | llm --prompt 'highlight typos'\"\n```\n\nOr even simpler - Claude Opus 4.5 call in a bash alias. Would've taken 30 seconds instead of however long this took.\n\nLocal options exist too if you don't want to send kernel commit messages to external APIs - llama.cpp runs fine on CPU.\n\nJust saying. The tool that solves this problem already exists and is smarter than hunspell.\n\n**Title:** Skill issue\n\n**Comment:**\n\n`echo \"$msg\" | llm \"fix typos\"` \n\n🤷\n",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/HunspellColorize/issues/2/reactions",
+          "total_count": 6,
+          "+1": 0,
+          "-1": 6,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/HunspellColorize/issues/2/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-18T23:53:28Z"
+  },
+  {
+    "id": "7593731760",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 2325298,
+      "name": "torvalds/linux",
+      "url": "https://api.github.com/repos/torvalds/linux"
+    },
+    "payload": {
+      "repository_id": 2325298,
+      "push_id": 29889010064,
+      "ref": "refs/heads/master",
+      "head": "24d479d26b25bce5faea3ddd9fa8f3a6c3129ea7",
+      "before": "e84d960149e71e8d5e4db69775ce31305898ed0c"
+    },
+    "public": true,
+    "created_at": "2026-01-18T23:49:50Z",
+    "message": "Linux 6.19-rc6"
+  },
+  {
+    "id": "7592196583",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1137038093,
+      "name": "torvalds/HunspellColorize",
+      "url": "https://api.github.com/repos/torvalds/HunspellColorize"
+    },
+    "payload": {
+      "repository_id": 1137038093,
+      "push_id": 29887473151,
+      "ref": "refs/heads/main",
+      "head": "d2f2439ecf5d5c70dbc25f635729a9ea17fe61a3",
+      "before": "bc93b5011e24b56211ec806e0a1697d8ef3278d3"
+    },
+    "public": true,
+    "created_at": "2026-01-18T21:58:01Z",
+    "message": "Stop being quite so lazy about line lengths and UTF-8\n\nThis deals with line lengths by ignoring the issue and just using a\nstate machine on raw buffers.\n\nIt also deals with UTF-8 content using exactly the same \"ignore it\" way:\njust blithely assume that any non-US-ASCII characters are just letters\nin other alphabets.\n\nBecause ignorance is bliss, and that makes it do the right thing for\nFinnish and Swedish.  And presumably other languages that I don't speak\ntoo.\n\nOf course, if you use use other encodings than UTF-8, you get what you\ndeserve.  And even with UTF-8, this will get other Unicode things like\nhalf-space characters etc wrong, and just consider it all part of the\nword, and call you out on your odd spelling.\n\nYou win some, you lose some.  I'm not interested in doing an actual full\nUnicode lookup thing.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "5890259022",
+    "type": "PullRequestEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1137038093,
+      "name": "torvalds/HunspellColorize",
+      "url": "https://api.github.com/repos/torvalds/HunspellColorize"
+    },
+    "payload": {
+      "action": "closed",
+      "number": 1,
+      "pull_request": {
+        "url": "https://api.github.com/repos/torvalds/HunspellColorize/pulls/1",
+        "id": 3185741333,
+        "number": 1,
+        "head": {
+          "ref": "ab/friendly-readme-citation",
+          "sha": "ed9b17626b9336e91b1979c97d6ed73bb928bf83",
+          "repo": {
+            "id": 1137054346,
+            "url": "https://api.github.com/repos/AndreaBozzo/HunspellColorize",
+            "name": "HunspellColorize"
+          }
+        },
+        "base": {
+          "ref": "main",
+          "sha": "bc93b5011e24b56211ec806e0a1697d8ef3278d3",
+          "repo": {
+            "id": 1137038093,
+            "url": "https://api.github.com/repos/torvalds/HunspellColorize",
+            "name": "HunspellColorize"
+          }
+        }
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-18T21:24:11Z"
+  },
+  {
+    "id": "7590490783",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1137038093,
+      "name": "torvalds/HunspellColorize",
+      "url": "https://api.github.com/repos/torvalds/HunspellColorize"
+    },
+    "payload": {
+      "ref": "main",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/main",
+      "master_branch": "main",
+      "description": "Wrapper around 'less' to colorize spelling mistakes using Hunspell",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2026-01-18T19:58:57Z"
+  },
+  {
+    "id": "7576394206",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 2325298,
+      "name": "torvalds/linux",
+      "url": "https://api.github.com/repos/torvalds/linux"
+    },
+    "payload": {
+      "repository_id": 2325298,
+      "push_id": 29871648411,
+      "ref": "refs/heads/master",
+      "head": "e84d960149e71e8d5e4db69775ce31305898ed0c",
+      "before": "d12453c7e281d236f77b5c7d7cccbf9e5dfadfe5"
+    },
+    "public": true,
+    "created_at": "2026-01-18T03:32:52Z",
+    "message": "Merge tag 'for-6.19-rc5-tag' of git://git.kernel.org/pub/scm/linux/kernel/git/kdave/linux\n\nPull btrfs fixes from David Sterba:\n\n - with large folios in use, fix partial incorrect update of a reflinked\n   range\n\n - fix potential deadlock in iget when lookup fails and eviction is\n   needed\n\n - in send, validate inline extent type while detecting file holes\n\n - fix memory leak after an error when creating a space info\n\n - remove zone statistics from sysfs again, the output size limitations\n   make it unusable, we'll do it in another way in another release\n\n - test fixes:\n     - return proper error codes from block remapping tests\n     - fix tree root leaks in qgroup tests after errors\n\n* tag 'for-6.19-rc5-tag' of git://git.kernel.org/pub/scm/linux/kernel/git/kdave/linux:\n  btrfs: remove zoned statistics from sysfs\n  btrfs: fix memory leaks in create_space_info() error paths\n  btrfs: invalidate pages instead of truncate after reflinking\n  btrfs: update the Kconfig string for CONFIG_BTRFS_EXPERIMENTAL\n  btrfs: send: check for inline extents in range_is_hole_in_parent()\n  btrfs: tests: fix return 0 on rmap test failure\n  btrfs: tests: fix root tree leak in btrfs_test_qgroups()\n  btrfs: release path before iget_failed() in btrfs_read_locked_inode()"
+  },
+  {
+    "id": "5884121095",
+    "type": "IssueCommentEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1130786764,
+      "name": "torvalds/AudioNoise",
+      "url": "https://api.github.com/repos/torvalds/AudioNoise"
+    },
+    "payload": {
+      "action": "created",
+      "issue": {
+        "url": "https://api.github.com/repos/torvalds/AudioNoise/issues/65",
+        "repository_url": "https://api.github.com/repos/torvalds/AudioNoise",
+        "labels_url": "https://api.github.com/repos/torvalds/AudioNoise/issues/65/labels{/name}",
+        "comments_url": "https://api.github.com/repos/torvalds/AudioNoise/issues/65/comments",
+        "events_url": "https://api.github.com/repos/torvalds/AudioNoise/issues/65/events",
+        "html_url": "https://github.com/torvalds/AudioNoise/pull/65",
+        "id": 3824345257,
+        "node_id": "PR_kwDOQ2ZvzM69vU29",
+        "number": 65,
+        "title": "Add simple TUI for effect and pot control",
+        "user": {
+          "login": "ChrisX101010",
+          "id": 143946165,
+          "node_id": "U_kgDOCJRxtQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/143946165?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/ChrisX101010",
+          "html_url": "https://github.com/ChrisX101010",
+          "followers_url": "https://api.github.com/users/ChrisX101010/followers",
+          "following_url": "https://api.github.com/users/ChrisX101010/following{/other_user}",
+          "gists_url": "https://api.github.com/users/ChrisX101010/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/ChrisX101010/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/ChrisX101010/subscriptions",
+          "organizations_url": "https://api.github.com/users/ChrisX101010/orgs",
+          "repos_url": "https://api.github.com/users/ChrisX101010/repos",
+          "events_url": "https://api.github.com/users/ChrisX101010/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/ChrisX101010/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 2,
+        "created_at": "2026-01-17T04:07:10Z",
+        "updated_at": "2026-01-18T14:30:26Z",
+        "closed_at": null,
+        "active_lock_reason": null,
+        "draft": false,
+        "pull_request": {
+          "url": "https://api.github.com/repos/torvalds/AudioNoise/pulls/65",
+          "html_url": "https://github.com/torvalds/AudioNoise/pull/65",
+          "diff_url": "https://github.com/torvalds/AudioNoise/pull/65.diff",
+          "patch_url": "https://github.com/torvalds/AudioNoise/pull/65.patch",
+          "merged_at": null
+        },
+        "body": "Closes #11\n\nSimple terminal UI as requested by @torvalds:\n> \"Some UI for actually turning the virtual 'pots' and picking the effect would probably be interesting. But only something simple.\"\n\n## What it does\n- Select effects (flanger, echo, fm, am, phaser, discont)\n- Adjust the 4 virtual pots for each effect\n- Process audio and play the result\n\n## Implementation\n- Single Python file (~200 lines)\n- Uses only curses from standard library\n- No external dependencies\n- Stays with existing languages (Python already used for visualize.py)\n\nAs @ahwelp suggested, this uses Python instead of Rust/Ratatui to avoid adding a new language and heavy dependencies.\n\n## Controls\n- Up/Down: Select effect\n- Tab: Cycle pots\n- Left/Right: Adjust value\n- p: Process and play\n- r: Reset\n- q: Quit",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/AudioNoise/issues/65/reactions",
+          "total_count": 2,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 2,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/torvalds/AudioNoise/issues/65/timeline",
+        "performed_via_github_app": null,
+        "state_reason": null
+      },
+      "comment": {
+        "url": "https://api.github.com/repos/torvalds/AudioNoise/issues/comments/3764854949",
+        "html_url": "https://github.com/torvalds/AudioNoise/pull/65#issuecomment-3764854949",
+        "issue_url": "https://api.github.com/repos/torvalds/AudioNoise/issues/65",
+        "id": 3764854949,
+        "node_id": "IC_kwDOQ2ZvzM7gZyCl",
+        "user": {
+          "login": "torvalds",
+          "id": 1024025,
+          "node_id": "MDQ6VXNlcjEwMjQwMjU=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1024025?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/torvalds",
+          "html_url": "https://github.com/torvalds",
+          "followers_url": "https://api.github.com/users/torvalds/followers",
+          "following_url": "https://api.github.com/users/torvalds/following{/other_user}",
+          "gists_url": "https://api.github.com/users/torvalds/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/torvalds/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/torvalds/subscriptions",
+          "organizations_url": "https://api.github.com/users/torvalds/orgs",
+          "repos_url": "https://api.github.com/users/torvalds/repos",
+          "events_url": "https://api.github.com/users/torvalds/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/torvalds/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "created_at": "2026-01-18T03:24:10Z",
+        "updated_at": "2026-01-18T03:24:10Z",
+        "body": "Would you mind looking at expanding this a bit for the new dynamic control functionality I added to the 'convert' binary?\r\n\r\nSee commit ea71138 (\"convert: add somewhat realtime control interface\") which talks about changing the pot values at runtime using a file descriptor and the \"--control=<fd>\" command line switch. I _think_ it should work just fine in your python model.",
+        "reactions": {
+          "url": "https://api.github.com/repos/torvalds/AudioNoise/issues/comments/3764854949/reactions",
+          "total_count": 1,
+          "+1": 1,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "performed_via_github_app": null
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-18T03:24:10Z"
+  },
+  {
+    "id": "7576261026",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1130786764,
+      "name": "torvalds/AudioNoise",
+      "url": "https://api.github.com/repos/torvalds/AudioNoise"
+    },
+    "payload": {
+      "repository_id": 1130786764,
+      "push_id": 29871515167,
+      "ref": "refs/heads/main",
+      "head": "ea71138dee02b17df108889acbd7e686ba645b78",
+      "before": "4cfbb04cbbc1e30c36bab3331f3fa95a07b9b431"
+    },
+    "public": true,
+    "created_at": "2026-01-18T03:21:13Z",
+    "message": "convert: add somewhat realtime control interface\n\nThis is pretty raw and stupid, but I wanted to try changing the\nconversion parameters on the fly with a \"control file descriptor\".\n\nThis is currently very limited, and doesn't have an interface for\nswitching the effect itself at runtime (like I do on the hardware:\nlong-press the foot-switch for one second), but at least allows for\nsending \"pot commands\" to change the pot values dynamically.\n\nThe format is a five-byte ASCII packet of 'pXYY\\n', which sets put X to\nvalue YY (X being in the range '0'..'3', and YY being '00'..'99').\n\nWhy that format? Because right now the only testing I've done is from\nthe terminal, doing something like this:\n\n    $ ./convert --control=0 phaser input.raw |\n                aplay -c1 -r 48000 -f s32 -B 100\n\nand then you can just type in those commands at the terminal by hand:\nthe \"--control=0\" is the magic that says that fd 0 is a control channel.\n\nVery combersome, very stupid, but hey, it works.\n\nNote that I'm back to using 'aplay' for this, because with ffplay the\nlatency is absolutely horrible.  Something like three seconds of audio\nlater does any pot command take effect, because ffplay has slurped in a\nlot of data into its input buffers.\n\nIn contrast, with 'aplay', the effect is basically instantaneous,\nparticularly with that \"-B 100\" that keeps the buffering to a very\nreasonable 100ms.\n\nIf there is a flag for ffplay that makes it not buffer input very much,\nI haven't found it (and yes, I tried the obvious ones, but no, I didn't\ndo any exhaustive search since aplay works fine for me).\n\nIt should be very possible to wrap a UI around this, and I should also\nadd some command to switch the effect at runtime too.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "7573768000",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1130786764,
+      "name": "torvalds/AudioNoise",
+      "url": "https://api.github.com/repos/torvalds/AudioNoise"
+    },
+    "payload": {
+      "repository_id": 1130786764,
+      "push_id": 29869019584,
+      "ref": "refs/heads/main",
+      "head": "4cfbb04cbbc1e30c36bab3331f3fa95a07b9b431",
+      "before": "1d00ac1a92caf4d134bfe7aa0e6559747877e351"
+    },
+    "public": true,
+    "created_at": "2026-01-17T23:55:08Z",
+    "message": "convert: start parsing arguments more flexibly\n\nIn particular, allow default pot values (all at noon), and specifying\ninput and output files rather than always doing stdin/stdout.\n\nAnd no, this is still not all that smart, but it is at least a tiny bit\nmore flexible than it used to be, and the Makefile has been updated\naccordingly.\n\nAlso, when F_SETPIPE_SZ is available, use it to limit the buffering of\nthe output if it's a pipe.  That, together with the very limited\nbuffering by 'make_one_noise()' should make this somewhat real-time if\nthe target i sreading a pipe and doesn't have huge input buffers.\n\nPut another way: if I add interfaces to modify the pots concurrently,\nthat hopefully actually takes effect in a timely way.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "7571750643",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1130786764,
+      "name": "torvalds/AudioNoise",
+      "url": "https://api.github.com/repos/torvalds/AudioNoise"
+    },
+    "payload": {
+      "repository_id": 1130786764,
+      "push_id": 29866999683,
+      "ref": "refs/heads/main",
+      "head": "1d00ac1a92caf4d134bfe7aa0e6559747877e351",
+      "before": "c05b03cdf3da0d005bcca106e1e3bb4d624fc2a6"
+    },
+    "public": true,
+    "created_at": "2026-01-17T21:14:04Z",
+    "message": "Refactor visualize.py to use native sample units and improve slider\n\nDynamically visualize the X axis in different modes, making the raw\nsample data the core internal data.  This is similar to how we format\nthe Y axis.\n\n - Switch internal logic (view updates, data loading, panning) from\n   seconds to sample indices (integers) to match the underlying data\n   structure\n\n - Add 'Samples' vs 'Time' X-axis mode toggle using RadioButtons\n\n - Update X-axis FuncFormatter to display either integer samples or\n   seconds based on selected mode\n\n - Overhaul slider logic to dynamically switch ranges and formats:\n    - In Time mode: Range [0, Duration Seconds], Format '%.3f s'\n    - In Samples mode: Range [0, Max Samples], Format '%d'\n\n - Make the slider be a range slider rather than just showing where the\n   current audio window plot starts\n\nThis was more antigravity with hand-holding and some manual edits.\n\nAlso just update the initial window size to the full audio size (ok,\nstill limited to one hour), since it's now no longer a performance issue\nat least with the test file I have.  Knock wood.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "7569650640",
+    "type": "PushEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1130786764,
+      "name": "torvalds/AudioNoise",
+      "url": "https://api.github.com/repos/torvalds/AudioNoise"
+    },
+    "payload": {
+      "repository_id": 1130786764,
+      "push_id": 29864895248,
+      "ref": "refs/heads/main",
+      "head": "c05b03cdf3da0d005bcca106e1e3bb4d624fc2a6",
+      "before": "60f199a1eb40e76649dff0d5db65ec5cf9a763c5"
+    },
+    "public": true,
+    "created_at": "2026-01-17T18:39:39Z",
+    "message": "Get rid of too random \"helper\" functions, tweak pot behavior\n\nLet's avoid the fastpow() helpers as much as possible, because they end\nup acting too randomly outside their proper ranges.\n\nI'll have to come up with something better for actual hardware, but for\nnow, let's pretend that we have a good \"pow2()\" function, and make it do\nthe exact thing for simulation for now.\n\nAnd for frequencies, where we don't want a linear function (because\nhuman hearing response is basically logarithmic) let's use a helper\nmacro that gives reasonable values: 220Hz to 6.5kHz with the pot\ncentered giving exactly 1kHz.  A simple cubic function gives a somewhat\nreasonable curve.\n\nThis all makes the pot values much less random.\n\nSigned-off-by: Linus Torvalds <torvalds@linux-foundation.org>"
+  },
+  {
+    "id": "5880678337",
+    "type": "PullRequestEvent",
+    "actor": {
+      "id": 1024025,
+      "login": "torvalds",
+      "display_login": "torvalds",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1024025?"
+    },
+    "repo": {
+      "id": 1130786764,
+      "name": "torvalds/AudioNoise",
+      "url": "https://api.github.com/repos/torvalds/AudioNoise"
+    },
+    "payload": {
+      "action": "closed",
+      "number": 52,
+      "pull_request": {
+        "url": "https://api.github.com/repos/torvalds/AudioNoise/pulls/52",
+        "id": 3171924238,
+        "number": 52,
+        "head": {
+          "ref": "perf-visualize-minmax-7809850248399933800",
+          "sha": "1a2bd0f3745f97dd530e3d786ac8be8fb267a9ae",
+          "repo": {
+            "id": 1133013582,
+            "url": "https://api.github.com/repos/sashimikun/AudioNoise",
+            "name": "AudioNoise"
+          }
+        },
+        "base": {
+          "ref": "main",
+          "sha": "2865c62810323030691c642f9980c63aba9bfdb9",
+          "repo": {
+            "id": 1130786764,
+            "url": "https://api.github.com/repos/torvalds/AudioNoise",
+            "name": "AudioNoise"
+          }
+        }
+      }
+    },
+    "public": true,
+    "created_at": "2026-01-14T03:34:33Z"
+  }
+]

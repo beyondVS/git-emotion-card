@@ -1,0 +1,79 @@
+<svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        /* === 1. Fonts, Basics === */
+        .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+        .font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+        .font-segoe { font-family: 'Segoe UI', sans-serif; }
+
+        /* === 2. Theme Variables === */
+        :root {
+        /* Light Mode Defaults */
+        --bg-color: #ffffff;
+        --card-bg: #f6f8fa;
+        --border-color: #d0d7de;
+        --title-color: #24292f;
+        --badge-rect-color: #24292f;
+        --badge-text-color: white;
+        --comment-color: #6e5494;
+        }
+        @media (prefers-color-scheme: dark) {
+        :root {
+        /* Dark Mode Overrides */
+        --bg-color: #0d1117;
+        --card-bg: #161b22;
+        --border-color: #30363d;
+        --title-color: #e6edf3;
+        --badge-rect-color: white;
+        --badge-text-color: #24292f;
+        --comment-color: #d2a8ff;
+        }
+        }
+
+        /* === 3. Component Styles === */
+        .bg-layer { fill: var(--bg-color); }
+        .card-layer { fill: var(--card-bg); stroke: var(--border-color); stroke-width: 1; rx: 12; }
+
+        /* Title */
+        .title-text {
+        font-size: 24px;
+        font-weight: 800;
+        fill: var(--title-color);
+        letter-spacing: -0.5px;
+        }
+
+        /* Badge */
+        .badge-rect { fill: var(--badge-rect-color); rx: 12; }
+        .badge-text { font-size: 12px; fill: var(--badge-text-color); font-weight: 700; text-anchor: middle; }
+
+        /* Divider */
+        .divider-line { stroke: var(--border-color); stroke-width: 1; stroke-dasharray: 4 4; }
+
+        /* Comment */
+        .comment-text {
+        font-size: 14px;
+        fill: var(--comment-color);
+        text-anchor: middle;
+        font-style: italic;
+        }
+    </style>
+
+    <rect width="100%" height="100%" class="bg-layer"/>
+
+    <rect x="10" y="10" width="580" height="140" class="card-layer"/>
+
+    <g transform="translate(30, 52)">
+        <text class="font-sans title-text">{{ persona_title }}</text>
+    </g>
+
+    <g transform="translate(470, 33)">
+        <rect width="100" height="24" class="badge-rect"/>
+        <text x="50" y="16" class="font-mono badge-text">{{ status_label }}</text>
+    </g>
+
+    <line x1="30" y1="75" x2="570" y2="75" class="divider-line"/>
+
+    <text x="300" y="110" class="font-segoe comment-text">
+        <tspan x="300" dy="0">"{{ comment_line_1 }}"</tspan>
+        <tspan x="300" dy="1.4em">"{{ comment_line_2 }}"</tspan>
+    </text>
+</svg>

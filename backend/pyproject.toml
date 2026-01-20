@@ -1,0 +1,61 @@
+[project]
+name = "git-emotion-card"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "django>=5.2.10",
+    "google-genai>=1.59.0",
+    "requests>=2.32.5",
+    "torch>=2.9.1",
+    "transformers>=4.57.5",
+]
+
+[dependency-groups]
+dev = [
+    "python-dotenv>=1.2.1",
+    "ruff>=0.14.13",
+]
+
+[tool.ruff]
+target-version = "py311"  # 타켓 파이썬 버전
+
+# Same as Black.
+line-length = 120
+indent-width = 4
+
+# PEP 8 스타일 준수 및 기본 규칙 활성화
+select = [
+    "E", # pycodestyle errors (표준 에러)
+    "W", # pycodestyle warnings (표준 경고)
+    "F", # pyflakes (문법/로직 오류 감지)
+    "I", # isort (임포트 정렬 - 별도 도구 불필요)
+    "B", # flake8-bugbear (잠재적 버그 탐지 - 강력 추천)
+    "N", # pep8-naming (네이밍 컨벤션 준수 여부)
+    "UP", # pyupgrade (구식 문법을 최신 문법으로 자동 변환)
+    "SIM", # flake8-simplify (코드 복잡도 단순화 제안)
+    "DJ", # flake8-django (Django 전용 린트 규칙)
+]
+
+# 특정 규칙 무시 (line-length는 포매터에서 다루므로 무시)
+ignore = [
+    "E501", # 줄 길이는 ruff format이 알아서 처리하므로 린터에선 무시
+    "B008", # 함수 인자에 함수 호출 허용 (FastAPI의 Depends, Django의 model field 등에서 필수)
+]
+
+# 제외할 파일/디렉토리 지정 (빌드, 가상환경 등)
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+]
+
+# 자동 수정 가능한 규칙 활성화 (예: F401, E701)
+fix = true
+
+
+# 포매팅 설정
+[tool.ruff.format]
+quote-style = "double"  # 큰따옴표 사용
+indent-style = "space"  # 공백 들여쓰기 (스페이스 4칸)
+line-ending = "auto"
