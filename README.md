@@ -23,6 +23,7 @@ AI가 당신의 커밋 메시지와 이슈 댓글을 읽고, 현재 당신이 "�
 
 - **Language:** Python 3.11
 - **Framework:** Django 5.2
+- **Cache & Queue:** Redis, Celery
 - **AI & ML:**
     - Hugging Face Transformers (`xlm-roberta-base-finetuned-kor-8-emotions`)
     - Google Gemini API
