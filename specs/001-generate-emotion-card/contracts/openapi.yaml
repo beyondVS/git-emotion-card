@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Git Emotion Card API
+  version: 1.0.0
+  description: GitHub 활동 기반 감정 분석 카드 생성 API
+paths:
+  /card.svg:
+    get:
+      summary: 감정 카드 SVG 조회
+      description: >
+        사용자의 GitHub 활동을 분석하여 감정 상태가 반영된 SVG 카드를 반환합니다.
+        데이터가 없으면(Cold Miss) 분석 요청을 트리거하고 플레이스홀더를 반환합니다.
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+          description: GitHub 사용자 ID
+      responses:
+        '200':
+          description: 성공 (SVG 이미지 반환)
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+                format: binary
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, no-store, must-revalidate
+        '400':
+          description: 잘못된 요청 (파라미터 누락 등)
+        '500':
+          description: 서버 오류 (Fallback SVG 반환 권장)
