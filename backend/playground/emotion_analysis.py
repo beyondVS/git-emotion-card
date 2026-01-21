@@ -1,3 +1,4 @@
+import datetime
 import json
 import logging
 import os
@@ -79,7 +80,9 @@ class GitHubClient:
     BASE_URL = "https://api.github.com"
 
     def __init__(self, token: str | None = None):
-        self.headers = {"Authorization": f"token {token}"} if token else {}
+        self.session = requests.Session()
+        if token:
+            self.session.headers.update({"Authorization": f"token {token}"})
 
     def get_user_events(self, username: str, per_page: int | None = None) -> list[dict[str, Any]]:
         """특정 유저의 최근 이벤트를 가져옵니다."""
@@ -88,7 +91,7 @@ class GitHubClient:
 
         try:
             logger.info(f"Fetching events for user: {username}")
-            response = requests.get(url, headers=self.headers, params=params)
+            response = self.session.get(url, params=params)
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as e:
@@ -98,7 +101,7 @@ class GitHubClient:
     def fetch_commit_message(self, url: str) -> str | None:
         """PushEvent의 커밋 메시지를 별도로 조회합니다."""
         try:
-            response = requests.get(url, headers=self.headers)
+            response = self.session.get(url)
             if response.status_code == 200:
                 return response.json().get("commit", {}).get("message")
         except requests.exceptions.RequestException:
@@ -158,11 +161,11 @@ class EventParser:
                 head_commit_sha = payload.get("head")
                 repo_url = event.get("repo", {}).get("url")
 
-                # 미리 message가 세팅된 테스용 PushEvent 라면
+                # 1. 테스트용 데이터 확인
                 if event.get("message"):
                     message = event.get("message")
-
-                if head_commit_sha and repo_url:
+                elif head_commit_sha and repo_url:
+                    logger.info("Fetching commit message...")
                     commit_url = f"{repo_url}/commits/{head_commit_sha}"
                     msg = client.fetch_commit_message(commit_url)
                     if msg:
@@ -188,21 +191,36 @@ class EmotionAnalyzer:
     ML 모델의 결과를 사용하여 표준 감정(StandardEmotion)을 반환합니다.
     """
 
-    MODEL_ID = "blue2959/xlm-roberta-base-finetuned-kor-8-emotions_v1.2"
+    # MODEL_ID = "blue2959/xlm-roberta-base-finetuned-kor-8-emotions_v1.2"
+    # MODEL_ID = "Seonghaa/korean-emotion-classifier-roberta"
+    # MODEL_ID = "Jinuuuu/KoELECTRA_fine_tunning_emotion"
+    MODEL_ID = "noridorimari/emotion_classifier"
 
     # 1. ML 모델의 Raw Label -> 모델의 의미적 Label
+    # blue2959/xlm-roberta-base-finetuned-kor-8-emotions_v1.2
+    # MODEL_LABELS = {
+    #     "LABEL_0": "joy",
+    #     "LABEL_1": "surprise",
+    #     "LABEL_2": "anger",
+    #     "LABEL_3": "fear",
+    #     "LABEL_4": "hurt",
+    #     "LABEL_5": "sadness",
+    #     "LABEL_6": "neutral",
+    # }
+
+    # noridorimari/emotion_classifier
     MODEL_LABELS = {
-        "LABEL_0": "joy",
-        "LABEL_1": "surprise",
-        "LABEL_2": "anger",
-        "LABEL_3": "fear",
-        "LABEL_4": "hurt",
-        "LABEL_5": "sadness",
-        "LABEL_6": "neutral",
+        "LABEL_0": "기쁨",  # happy
+        "LABEL_1": "당황",  # embarrass
+        "LABEL_2": "분노",  # anger
+        "LABEL_3": "불안",  # unrest
+        "LABEL_4": "상처",  # damaged
+        "LABEL_5": "슬픔",  # sadness
     }
 
     def __init__(self, device: int = -1):
         logger.info(f"Loading emotion model: {self.MODEL_ID}")
+
         self.classifier = pipeline(
             "text-classification",
             model=self.MODEL_ID,
@@ -245,7 +263,7 @@ def main():
     with open("data.json", encoding="UTF8") as f:
         events = json.load(f)
 
-    # 2. 데이터 파싱
+    # # 2. 데이터 파싱
     parsed_events = EventParser.parse(events, client)
     logger.info(f"Extracted {len(parsed_events)} messages for analysis.")
     # print(events)
@@ -254,13 +272,13 @@ def main():
         logger.warning("No messages found to analyze.")
         return
 
-    # 3. 감정 분석
-    analyzer = EmotionAnalyzer(device=-1)  # CPU 사용
-
-    for event in parsed_events:
-        result = analyzer.analyze(event.message)
-        event.emotion = result
-        print(f"{event.id} [{event.created_at}] {event.repo_name} - {event.type}: {event.emotion}")
+    # # 3. 감정 분석
+    # analyzer = EmotionAnalyzer(device=-1)  # CPU 사용
+    #
+    # for event in parsed_events:
+    #     result = analyzer.analyze(event.message)
+    #     event.emotion = result
+    #     print(f"{event.id} [{event.created_at}] {event.repo_name} - {event.type}: {event.emotion}")
 
     # 4. Gemini 로 분석
     gemini_api_key = os.getenv("GEMINI_API_KEY", "")
@@ -279,6 +297,8 @@ def main():
     with open(prompt_file_path, encoding="utf-8") as f:
         system_prompt = f.read()
 
+    system_prompt = system_prompt.replace("{current_time}", str(datetime.datetime.now().isoformat()))
+
     # 분석 데이터 구성
     analysis_input = []
     for event in parsed_events:
@@ -287,7 +307,7 @@ def main():
                 "event_time": event.created_at,
                 "event_type": event.type,
                 "repo_name": event.repo_name,
-                "emotion": event.emotion,
+                "message": event.message,
             }
         )
 
@@ -346,7 +366,8 @@ if __name__ == "__main__":
 }
 """
 
-"""
+"""blue2959/xlm-roberta-base-finetuned-kor-8-emotions_v1.2
+
 7621489697 [2026-01-19T19:32:53Z] torvalds/uemacs - PushEvent: [{'label': 'neutral', 'score': 0.9938}, {'label': 'sadness', 'score': 0.0038}, {'label': 'anger', 'score': 0.0017}, {'label': 'surprise', 'score': 0.0003}, {'label': 'joy', 'score': 0.0002}, {'label': 'fear', 'score': 0.0002}, {'label': 'hurt', 'score': 0.0}]
 7620741436 [2026-01-19T18:58:10Z] torvalds/uemacs - PushEvent: [{'label': 'neutral', 'score': 0.9936}, {'label': 'surprise', 'score': 0.0028}, {'label': 'sadness', 'score': 0.0017}, {'label': 'anger', 'score': 0.0008}, {'label': 'fear', 'score': 0.0005}, {'label': 'joy', 'score': 0.0005}, {'label': 'hurt', 'score': 0.0001}]
 7618585211 [2026-01-19T17:25:41Z] torvalds/HunspellColorize - PushEvent: [{'label': 'neutral', 'score': 0.9981}, {'label': 'joy', 'score': 0.0007}, {'label': 'anger', 'score': 0.0005}, {'label': 'sadness', 'score': 0.0003}, {'label': 'surprise', 'score': 0.0003}, {'label': 'fear', 'score': 0.0001}, {'label': 'hurt', 'score': 0.0}]
@@ -364,5 +385,83 @@ if __name__ == "__main__":
   "status_enum": "NEUTRAL",
   "persona_title": "만성 코드 굴리기",
   "comment": "정신없이 코드를 굴리는 중. 집중력이 흐트러질 틈이 없습니다."
+}
+"""
+
+"""Seonghaa/korean-emotion-classifier-roberta
+
+7621489697 [2026-01-19T19:32:53Z] torvalds/uemacs - PushEvent: [{'label': '평온', 'score': 0.9628}, {'label': '분노', 'score': 0.0098}, {'label': '불안', 'score': 0.0074}, {'label': '슬픔', 'score': 0.007}, {'label': '당황', 'score': 0.0065}, {'label': '기쁨', 'score': 0.0064}]
+7620741436 [2026-01-19T18:58:10Z] torvalds/uemacs - PushEvent: [{'label': '평온', 'score': 0.9645}, {'label': '분노', 'score': 0.0083}, {'label': '슬픔', 'score': 0.0072}, {'label': '당황', 'score': 0.0067}, {'label': '불안', 'score': 0.0067}, {'label': '기쁨', 'score': 0.0066}]
+7618585211 [2026-01-19T17:25:41Z] torvalds/HunspellColorize - PushEvent: [{'label': '평온', 'score': 0.9643}, {'label': '분노', 'score': 0.009}, {'label': '불안', 'score': 0.0069}, {'label': '슬픔', 'score': 0.0068}, {'label': '기쁨', 'score': 0.0067}, {'label': '당황', 'score': 0.0063}]
+7593945715 [2026-01-19T00:05:27Z] torvalds/HunspellColorize - PushEvent: [{'label': '평온', 'score': 0.9565}, {'label': '불안', 'score': 0.0152}, {'label': '분노', 'score': 0.01}, {'label': '슬픔', 'score': 0.0066}, {'label': '당황', 'score': 0.0059}, {'label': '기쁨', 'score': 0.0058}]
+7593731760 [2026-01-18T23:49:50Z] torvalds/linux - PushEvent: [{'label': '평온', 'score': 0.9644}, {'label': '슬픔', 'score': 0.0079}, {'label': '불안', 'score': 0.0073}, {'label': '당황', 'score': 0.0072}, {'label': '분노', 'score': 0.0067}, {'label': '기쁨', 'score': 0.0066}]
+7592196583 [2026-01-18T21:58:01Z] torvalds/HunspellColorize - PushEvent: [{'label': '평온', 'score': 0.9617}, {'label': '불안', 'score': 0.0106}, {'label': '분노', 'score': 0.009}, {'label': '슬픔', 'score': 0.0067}, {'label': '당황', 'score': 0.0061}, {'label': '기쁨', 'score': 0.0059}]
+7576394206 [2026-01-18T03:32:52Z] torvalds/linux - PushEvent: [{'label': '평온', 'score': 0.9592}, {'label': '불안', 'score': 0.0145}, {'label': '분노', 'score': 0.0081}, {'label': '슬픔', 'score': 0.0067}, {'label': '당황', 'score': 0.0059}, {'label': '기쁨', 'score': 0.0057}]
+5884121095 [2026-01-18T03:24:10Z] torvalds/AudioNoise - IssueCommentEvent: [{'label': '평온', 'score': 0.965}, {'label': '분노', 'score': 0.0075}, {'label': '당황', 'score': 0.0071}, {'label': '슬픔', 'score': 0.0071}, {'label': '기쁨', 'score': 0.0067}, {'label': '불안', 'score': 0.0066}]
+7576261026 [2026-01-18T03:21:13Z] torvalds/AudioNoise - PushEvent: [{'label': '평온', 'score': 0.9647}, {'label': '분노', 'score': 0.0082}, {'label': '불안', 'score': 0.0071}, {'label': '슬픔', 'score': 0.007}, {'label': '당황', 'score': 0.0066}, {'label': '기쁨', 'score': 0.0065}]
+7573768000 [2026-01-17T23:55:08Z] torvalds/AudioNoise - PushEvent: [{'label': '평온', 'score': 0.9638}, {'label': '분노', 'score': 0.009}, {'label': '불안', 'score': 0.0072}, {'label': '슬픔', 'score': 0.0069}, {'label': '기쁨', 'score': 0.0065}, {'label': '당황', 'score': 0.0065}]
+7571750643 [2026-01-17T21:14:04Z] torvalds/AudioNoise - PushEvent: [{'label': '평온', 'score': 0.9651}, {'label': '분노', 'score': 0.0076}, {'label': '슬픔', 'score': 0.007}, {'label': '불안', 'score': 0.007}, {'label': '기쁨', 'score': 0.0067}, {'label': '당황', 'score': 0.0066}]
+7569650640 [2026-01-17T18:39:39Z] torvalds/AudioNoise - PushEvent: [{'label': '평온', 'score': 0.9651}, {'label': '분노', 'score': 0.0078}, {'label': '기쁨', 'score': 0.0071}, {'label': '슬픔', 'score': 0.007}, {'label': '당황', 'score': 0.0066}, {'label': '불안', 'score': 0.0065}]
+
+{
+  "status_enum": "NEUTRAL",
+  "persona_title": "깊은 코딩의 늪",
+  "comment": "영혼 없이 기계적으로 타자만 치는 중. Ctrl+C, Ctrl+V 반복 수행 중"
+}
+"""
+
+"""Jinuuuu/KoELECTRA_fine_tunning_emotion
+
+7621489697 [2026-01-19T19:32:53Z] torvalds/uemacs - PushEvent: [{'label': 'happy', 'score': 0.4253}, {'label': 'embarrassed', 'score': 0.1853}, {'label': 'angry', 'score': 0.1276}, {'label': 'anxious', 'score': 0.1226}, {'label': 'heartache', 'score': 0.0745}, {'label': 'sad', 'score': 0.0647}]
+7620741436 [2026-01-19T18:58:10Z] torvalds/uemacs - PushEvent: [{'label': 'happy', 'score': 0.6016}, {'label': 'embarrassed', 'score': 0.1355}, {'label': 'anxious', 'score': 0.0861}, {'label': 'angry', 'score': 0.0848}, {'label': 'sad', 'score': 0.048}, {'label': 'heartache', 'score': 0.0441}]
+7618585211 [2026-01-19T17:25:41Z] torvalds/HunspellColorize - PushEvent: [{'label': 'embarrassed', 'score': 0.3213}, {'label': 'angry', 'score': 0.2154}, {'label': 'heartache', 'score': 0.1408}, {'label': 'sad', 'score': 0.1283}, {'label': 'anxious', 'score': 0.1087}, {'label': 'happy', 'score': 0.0854}]
+7593945715 [2026-01-19T00:05:27Z] torvalds/HunspellColorize - PushEvent: [{'label': 'happy', 'score': 0.658}, {'label': 'embarrassed', 'score': 0.1053}, {'label': 'anxious', 'score': 0.0782}, {'label': 'angry', 'score': 0.0748}, {'label': 'sad', 'score': 0.0447}, {'label': 'heartache', 'score': 0.0389}]
+7593731760 [2026-01-18T23:49:50Z] torvalds/linux - PushEvent: [{'label': 'anxious', 'score': 0.2723}, {'label': 'angry', 'score': 0.2556}, {'label': 'embarrassed', 'score': 0.1916}, {'label': 'heartache', 'score': 0.14}, {'label': 'sad', 'score': 0.0956}, {'label': 'happy', 'score': 0.045}]
+7592196583 [2026-01-18T21:58:01Z] torvalds/HunspellColorize - PushEvent: [{'label': 'happy', 'score': 0.4586}, {'label': 'embarrassed', 'score': 0.1617}, {'label': 'angry', 'score': 0.1195}, {'label': 'anxious', 'score': 0.0928}, {'label': 'heartache', 'score': 0.0858}, {'label': 'sad', 'score': 0.0815}]
+7576394206 [2026-01-18T03:32:52Z] torvalds/linux - PushEvent: [{'label': 'happy', 'score': 0.5556}, {'label': 'embarrassed', 'score': 0.1397}, {'label': 'anxious', 'score': 0.1143}, {'label': 'angry', 'score': 0.0919}, {'label': 'heartache', 'score': 0.0496}, {'label': 'sad', 'score': 0.0489}]
+5884121095 [2026-01-18T03:24:10Z] torvalds/AudioNoise - IssueCommentEvent: [{'label': 'happy', 'score': 0.5836}, {'label': 'embarrassed', 'score': 0.1281}, {'label': 'anxious', 'score': 0.1011}, {'label': 'angry', 'score': 0.0992}, {'label': 'heartache', 'score': 0.0497}, {'label': 'sad', 'score': 0.0385}]
+7576261026 [2026-01-18T03:21:13Z] torvalds/AudioNoise - PushEvent: [{'label': 'happy', 'score': 0.6565}, {'label': 'embarrassed', 'score': 0.1145}, {'label': 'anxious', 'score': 0.0812}, {'label': 'heartache', 'score': 0.0525}, {'label': 'angry', 'score': 0.0506}, {'label': 'sad', 'score': 0.0447}]
+7573768000 [2026-01-17T23:55:08Z] torvalds/AudioNoise - PushEvent: [{'label': 'happy', 'score': 0.7757}, {'label': 'embarrassed', 'score': 0.0658}, {'label': 'angry', 'score': 0.0503}, {'label': 'anxious', 'score': 0.0475}, {'label': 'sad', 'score': 0.0315}, {'label': 'heartache', 'score': 0.0292}]
+7571750643 [2026-01-17T21:14:04Z] torvalds/AudioNoise - PushEvent: [{'label': 'happy', 'score': 0.4938}, {'label': 'embarrassed', 'score': 0.1657}, {'label': 'anxious', 'score': 0.102}, {'label': 'angry', 'score': 0.0926}, {'label': 'sad', 'score': 0.0845}, {'label': 'heartache', 'score': 0.0614}]
+7569650640 [2026-01-17T18:39:39Z] torvalds/AudioNoise - PushEvent: [{'label': 'happy', 'score': 0.8114}, {'label': 'embarrassed', 'score': 0.0567}, {'label': 'anxious', 'score': 0.0417}, {'label': 'angry', 'score': 0.0373}, {'label': 'sad', 'score': 0.0292}, {'label': 'heartache', 'score': 0.0237}]
+
+{
+  "status_enum": "JOY",
+  "persona_title": "코딩 갓생러",
+  "comment": "오늘도 키보드와 함께 달립니다. 멈추지 않는 푸쉬!"
+}
+"""
+
+"""noridorimari/emotion_classifier
+
+7621489697 [2026-01-19T19:32:53Z] torvalds/uemacs - PushEvent: [{'label': '분노', 'score': 0.5207}, {'label': '당황', 'score': 0.1886}, {'label': '상처', 'score': 0.1536}, {'label': '기쁨', 'score': 0.0488}, {'label': '불안', 'score': 0.0451}, {'label': '슬픔', 'score': 0.0431}]
+7620741436 [2026-01-19T18:58:10Z] torvalds/uemacs - PushEvent: [{'label': '당황', 'score': 0.4793}, {'label': '상처', 'score': 0.2373}, {'label': '분노', 'score': 0.1529}, {'label': '기쁨', 'score': 0.0507}, {'label': '불안', 'score': 0.0451}, {'label': '슬픔', 'score': 0.0347}]
+7618585211 [2026-01-19T17:25:41Z] torvalds/HunspellColorize - PushEvent: [{'label': '상처', 'score': 0.3564}, {'label': '분노', 'score': 0.2508}, {'label': '당황', 'score': 0.1915}, {'label': '불안', 'score': 0.0786}, {'label': '슬픔', 'score': 0.0705}, {'label': '기쁨', 'score': 0.0522}]
+7593945715 [2026-01-19T00:05:27Z] torvalds/HunspellColorize - PushEvent: [{'label': '당황', 'score': 0.3663}, {'label': '분노', 'score': 0.1744}, {'label': '기쁨', 'score': 0.1615}, {'label': '상처', 'score': 0.1576}, {'label': '슬픔', 'score': 0.098}, {'label': '불안', 'score': 0.0422}]
+7593731760 [2026-01-18T23:49:50Z] torvalds/linux - PushEvent: [{'label': '슬픔', 'score': 0.4991}, {'label': '상처', 'score': 0.249}, {'label': '분노', 'score': 0.1349}, {'label': '당황', 'score': 0.0911}, {'label': '불안', 'score': 0.0176}, {'label': '기쁨', 'score': 0.0083}]
+7592196583 [2026-01-18T21:58:01Z] torvalds/HunspellColorize - PushEvent: [{'label': '기쁨', 'score': 0.3109}, {'label': '상처', 'score': 0.2083}, {'label': '당황', 'score': 0.1747}, {'label': '분노', 'score': 0.1513}, {'label': '슬픔', 'score': 0.1093}, {'label': '불안', 'score': 0.0455}]
+7576394206 [2026-01-18T03:32:52Z] torvalds/linux - PushEvent: [{'label': '기쁨', 'score': 0.7648}, {'label': '당황', 'score': 0.0903}, {'label': '분노', 'score': 0.0404}, {'label': '슬픔', 'score': 0.0391}, {'label': '상처', 'score': 0.0356}, {'label': '불안', 'score': 0.0298}]
+5884121095 [2026-01-18T03:24:10Z] torvalds/AudioNoise - IssueCommentEvent: [{'label': '상처', 'score': 0.384}, {'label': '분노', 'score': 0.176}, {'label': '당황', 'score': 0.14}, {'label': '슬픔', 'score': 0.1186}, {'label': '기쁨', 'score': 0.091}, {'label': '불안', 'score': 0.0903}]
+7576261026 [2026-01-18T03:21:13Z] torvalds/AudioNoise - PushEvent: [{'label': '기쁨', 'score': 0.2489}, {'label': '분노', 'score': 0.246}, {'label': '상처', 'score': 0.2075}, {'label': '당황', 'score': 0.1807}, {'label': '슬픔', 'score': 0.0721}, {'label': '불안', 'score': 0.0448}]
+7573768000 [2026-01-17T23:55:08Z] torvalds/AudioNoise - PushEvent: [{'label': '상처', 'score': 0.4474}, {'label': '당황', 'score': 0.2844}, {'label': '분노', 'score': 0.1475}, {'label': '불안', 'score': 0.0457}, {'label': '슬픔', 'score': 0.0385}, {'label': '기쁨', 'score': 0.0364}]
+7571750643 [2026-01-17T21:14:04Z] torvalds/AudioNoise - PushEvent: [{'label': '분노', 'score': 0.3154}, {'label': '기쁨', 'score': 0.1941}, {'label': '상처', 'score': 0.1651}, {'label': '당황', 'score': 0.1242}, {'label': '불안', 'score': 0.1235}, {'label': '슬픔', 'score': 0.0776}]
+7569650640 [2026-01-17T18:39:39Z] torvalds/AudioNoise - PushEvent: [{'label': '상처', 'score': 0.3679}, {'label': '당황', 'score': 0.2788}, {'label': '분노', 'score': 0.1544}, {'label': '슬픔', 'score': 0.084}, {'label': '불안', 'score': 0.0649}, {'label': '기쁨', 'score': 0.0498}]
+
+{
+  "status_enum": "ANXIETY",
+  "reason": ...
+  "persona_title": "코드 늪",
+  "comment": "코드와 씨름 중. 다음은 무엇일까요?"
+}
+"""
+
+
+"""LLM 감정 분석
+
+{
+  "status_enum": "NEUTRAL",
+  "persona_title": "평화로운 코더",
+  "comment": "영혼은 집으로, 손가락은 키보드로. 코드는 쉬고 있네요.",
+  "reason": "일련의 PushEvent가 발생했지만, 메시지 내용이 'add LICENSE', 'update README', 'Use pkg-config', 'refactor' 등 유지보수, 문서화, 코드 개선 작업에 해당하며, 명확한 감정이나 긴박함이 드러나지 않아 평온한 상태로 판단됨."
 }
 """
