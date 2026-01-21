@@ -1,24 +1,45 @@
-# 기술 조사 및 결정 사항 (Research & Decisions)
+# 연구 및 결정 사항
 
-## 1. 비동기 처리 아키텍처
-- **결정**: **Celery + Redis + PostgreSQL**
-- **근거**:
-  - ML 모델 추론(HuggingFace)과 LLM 호출(Gemini)은 수 초 이상 소요되는 Heavy Task로, 웹 요청 주기(Request-Response Cycle) 내에서 처리 불가능.
-  - Django Async View만으로는 CPU Bound 작업(ML) 처리 시 이벤트 루프 블로킹 위험이 있음.
-  - Celery는 파이썬 생태계의 표준적인 비동기 큐 솔루션으로 안정성이 검증됨.
-- **고려된 대안**:
-  - **Django Async View + Threading**: 가볍지만, 동시 요청 증가 시 서버 리소스 고갈 및 관리 어려움.
-  - **DB Polling**: 구현은 쉽지만 실시간성이 떨어지고 DB 부하 증가.
+**기능**: Generate Emotion Card
+**상태**: 완료
 
-## 2. 데이터베이스
-- **결정**: **PostgreSQL**
-- **근거**:
-  - Celery 워커와 웹 서버가 동시에 DB에 접근(Write)해야 함.
-  - SQLite는 파일 기반으로, 높은 동시성 환경에서 `database is locked` 오류가 빈번함.
-  - JSONB 필드를 활용하여 가변적인 ML 분석 결과(`emotion_result`)를 유연하게 저장 가능.
+## 결정 1: SVG 생성 전략
 
-## 3. AI 모델 서빙
-- **결정**: **HuggingFace (Local) + Gemini Flash Lite (API)**
+- **질문**: 동적인 SVG 카드를 어떻게 생성할 것인가?
+- **결정**: Django Template Engine을 사용하여 `.svg` 파일을 렌더링한다.
 - **근거**:
-  - **감정 분석**: `xlm-roberta-base-finetuned-kor-8-emotions` 모델은 로컬에서 실행 가능한 크기이며, 한국어 감정 분석에 특화됨. API 호출 비용 절감.
-  - **페르소나 생성**: 복잡한 추론과 문장 생성은 로컬 모델보다 거대 LLM(Gemini)이 훨씬 우수함. Flash Lite 모델은 속도와 비용 면에서 MVP에 적합.
+  - SVG는 근본적으로 XML 텍스트이므로, Django의 강력한 템플릿 상속 및 변수 치환 기능을 그대로 사용할 수 있다.
+  - 별도의 이미지 처리 라이브러리(Pillow, Cairo 등)를 설치할 필요가 없어 가볍다.
+  - 프론트엔드 지식(CSS/HTML)을 활용하여 디자인을 쉽게 수정할 수 있다.
+- **대안**:
+  - **Pillow/OpenCV**: 래스터 이미지(PNG/JPG) 생성에 적합하며 SVG 생성에는 부적합.
+  - **Matplotlib**: 데이터 시각화에는 좋으나, 디자인된 카드 제작에는 오버헤드가 큼.
+
+## 결정 2: GitHub API 클라이언트
+
+- **질문**: GitHub API 통신을 위해 어떤 라이브러리를 사용할 것인가?
+- **결정**: 기존 `backend/playground/emotion_analysis.py`에 구현된 커스텀 `GitHubClient` (requests 기반)를 리팩토링하여 사용한다.
+- **근거**:
+  - **Minimal Change**: 이미 작동하는 코드가 존재함.
+  - **Dependency**: `PyGithub` 등 무거운 라이브러리를 추가할 필요가 없음.
+  - **Control**: 필요한 엔드포인트(User Events, Commit Message)만 명확하게 제어 가능.
+- **대안**:
+  - **PyGithub**: 기능은 강력하지만 프로젝트 범위(단순 이벤트 수집)에 비해 무거움.
+
+## 결정 3: 비동기 작업 처리 (Celery)
+
+- **질문**: 분석 요청의 비동기 처리를 어떻게 구성할 것인가?
+- **결정**: Django + Celery + Redis 조합을 사용한다.
+- **근거**:
+  - 프로젝트 헌법의 표준 스택임.
+  - "Stale-While-Revalidate" 패턴 구현 시, 백그라운드 갱신 작업을 안정적으로 큐에 넣고 관리하기에 최적.
+  - 분산 락(Distributed Lock) 구현에 Redis를 활용하기 용이함.
+
+## 결정 4: LLM 클라이언트
+
+- **질문**: Gemini 연동을 위한 라이브러리는?
+- **결정**: `google-genai` (최신 SDK)를 사용한다.
+- **근거**:
+  - `playground` 코드에서 이미 사용 중.
+  - Gemini Flash Lite 모델을 지원.
+- **주의**: 로컬 ML 모델(`transformers`) 의존성은 제거해야 함 (사양 변경 사항).
