@@ -23,12 +23,14 @@ ENV PATH="/opt/venv/bin:$PATH"
 # Copy the project into the image
 COPY . /app
 
+RUN chmod +x /app/entrypoint.sh
+
 # Install the project itself
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
 
-# Reset the entrypoint, don't invoke `uv`
-ENTRYPOINT []
+# Set the entrypoint to our script
+ENTRYPOINT ["/bin/bash", "/app/entrypoint.sh"]
 
 # Run the Django development server by default
 CMD ["uvicorn", "config.asgi:application", "--host", "0.0.0.0", "--port", "8000", "--reload"]
