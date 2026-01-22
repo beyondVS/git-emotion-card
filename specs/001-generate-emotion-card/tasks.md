@@ -58,7 +58,7 @@ graph TD
 - [ ] T011 [US1] `CardView`에서 Cold Miss 시 `analyze_user_task` 호출 및 Placeholder 렌더링 로직 연결
 - [ ] T012 [P] [US1] `backend/card/services.py`에 `GitHubClient` 구현 (Playground 코드 이관 및 리팩토링)
 - [ ] T013 [P] [US1] `backend/card/services.py`에 `GeminiClient` 구현 (Playground 코드 이관 및 리팩토링)
-- [ ] T014 [US1] `backend/card/tasks.py`에 실제 분석 로직 구현 (GitHub 이벤트 수집 -> Gemini 분석 -> DB 저장)
+- [ ] T014 [US1] `backend/card/tasks.py`에 실제 분석 로직 구현 (GitHub 이벤트 증분 수집 및 API 장애 재시도 포함 -> Gemini 분석 -> DB 저장)
 
 ## 4단계: 사용자 스토리 2 - 분석 완료 후 카드 조회 (Hit & Fresh)
 
@@ -88,4 +88,4 @@ graph TD
 **목표**: 에러 처리, 코드 정리 및 최종 점검.
 
 - [ ] T020 [Final] `backend/card/views.py`에 예외 처리 및 Fallback SVG(에러용) 적용
-- [ ] T021 [Final] `backend/card/tests.py`에 주요 시나리오(Cold, Fresh, Stale)에 대한 통합 테스트 작성
+- [ ] T021 [Final] `backend/card/tests.py`에 주요 시나리오(Cold, Fresh, Stale) 통합 테스트 및 응답 시간(200ms) 검증 테스트 작성
