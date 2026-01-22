@@ -1,63 +1,34 @@
 # Quickstart Guide
 
-이 기능(`001-generate-emotion-card`)을 로컬 환경에서 실행하고 테스트하는 방법입니다.
+## 전제 조건
 
-## 전제 조건 (Prerequisites)
+- Docker & Docker Compose
+- `.env` 파일 설정 (GITHUB_TOKEN, GEMINI_API_KEY 필수)
 
-- **Docker**: PostgreSQL, Redis 실행을 위해 필요합니다.
-- **Python 3.11+**: 프로젝트 런타임.
-- **uv**: 패키지 관리자.
-- **환경 변수**: `.env` 파일에 다음 설정이 필요합니다.
-  - `GITHUB_TOKEN`: GitHub API 토큰 (필수)
-  - `GEMINI_API_KEY`: Gemini API 키 (필수)
+## 실행 방법
 
-## 1. 인프라 실행
+1. **컨테이너 실행**
+   ```bash
+   docker-compose up --build
+   ```
 
-```bash
-# 프로젝트 루트에서
-docker-compose up -d db redis
-```
+2. **데이터베이스 마이그레이션 (최초 1회)**
+   자동으로 실행되지만, 수동 실행이 필요한 경우:
+   ```bash
+   docker-compose exec backend python manage.py migrate
+   ```
 
-## 2. 의존성 설치 및 마이그레이션
+3. **테스트**
+   브라우저 또는 curl로 요청:
+   ```bash
+   # 로컬 테스트
+   curl "http://localhost:8000/card.svg?username=torvalds" > card.svg
+   ```
 
-```bash
-# 의존성 설치
-uv sync
+## 개발 가이드
 
-# DB 마이그레이션 (GithubUser, AnalysisResult 테이블 생성)
-uv run python backend/manage.py makemigrations card
-uv run python backend/manage.py migrate
-```
-
-## 3. Celery 워커 실행 (터미널 1)
-
-비동기 분석 작업을 처리할 워커를 실행합니다.
-
-```bash
-# Windows (pool=solo 권장)
-uv run celery -A backend.config worker --loglevel=info --pool=solo
-
-# Linux/Mac
-uv run celery -A backend.config worker --loglevel=info
-```
-
-## 4. 웹 서버 실행 (터미널 2)
-
-```bash
-uv run python backend/manage.py runserver 0.0.0.0:8000
-```
-
-## 5. 테스트
-
-브라우저 또는 `curl`을 사용하여 카드를 요청합니다.
-
-```bash
-# 1. 최초 요청 (Cold Miss -> Analyzing 카드 반환 + Celery 작업 시작)
-curl -v "http://localhost:8000/card.svg?username=your_username"
-
-# 2. Celery 로그 확인
-# "Fetching events...", "Gemini Analysis Result..." 등이 출력되어야 함.
-
-# 3. 분석 완료 후 재요청 (Hit -> 결과 카드 반환)
-curl -v "http://localhost:8000/card.svg?username=your_username"
-```
+- **코드 수정**: `backend/card/` 디렉토리 내의 파일을 수정하면 `uvicorn`의 reload 기능으로 즉시 반영됩니다 (Celery 워커는 재시작 필요).
+- **테스트 실행**:
+  ```bash
+  docker-compose exec backend python manage.py test card
+  ```

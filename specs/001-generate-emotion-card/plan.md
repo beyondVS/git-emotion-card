@@ -1,12 +1,11 @@
 # 구현 계획: 감정 카드 생성 (Generate Emotion Card)
 
-**브랜치**: `001-generate-emotion-card` | **날짜**: 2026-01-21 | **사양**: [spec.md](spec.md)
+**브랜치**: `001-generate-emotion-card` | **날짜**: 2026-01-22 | **사양**: [spec.md](spec.md)
 **입력**: `/specs/001-generate-emotion-card/spec.md`의 기능 명세서
 
 ## 요약
 
-GitHub 사용자의 최근 24시간 활동 이벤트를 수집하여 Gemini(LLM)로 페르소나 및 감정 상태를 분석하고, 이를 SVG 카드 형태로 제공하는 API를 구현합니다. "지연 없는 응답"을 위해
-Celery/Redis 기반의 비동기 처리와 Stale-While-Revalidate 캐싱 전략을 적용합니다.
+GitHub 사용자의 최근 24시간 활동 이벤트를 수집하여 DB(`GithubEvent`)에 저장하고, Gemini(LLM)로 페르소나 및 감정 상태를 분석하여 SVG 카드 형태로 제공하는 API를 구현합니다. "지연 없는 응답"을 위해 Celery/Redis 기반의 비동기 처리와 Stale-While-Revalidate 캐싱 전략을 적용하며, **증분 수집(Incremental Collection)**을 통해 효율성을 극대화합니다.
 
 ## 기술적 컨텍스트
 
@@ -16,11 +15,11 @@ Celery/Redis 기반의 비동기 처리와 Stale-While-Revalidate 캐싱 전략�
 
 - **Web**: Django 5.2 (ASGI)
 - **Async**: Celery 5.x, Redis
-- **LLM**: `google-genai` (Gemini Flash Lite)
+- **LLM**: `google-genai` (Gemini 2.0 Flash Lite Preview)
 - **HTTP**: `requests` (GitHub API)
 - **Env**: `python-dotenv`
 
-**저장소**: PostgreSQL (User metadata, Analysis results)
+**저장소**: PostgreSQL (User metadata, Event history, Analysis results)
 **테스트**: Django Test Framework (`manage.py test`)
 **대상 플랫폼**: Docker (Linux Container)
 **프로젝트 유형**: Monolithic Web (Django App)
@@ -60,23 +59,28 @@ backend/
 ├── card/                # [New App]
 │   ├── __init__.py
 │   ├── apps.py
-│   ├── models.py        # GithubUser, AnalysisResult
+│   ├── models.py        # GithubUser, GithubEvent, AnalysisResult
 │   ├── views.py         # Card View (SVG render)
-│   ├── tasks.py         # Celery Tasks (Analyze)
+│   ├── tasks.py         # Celery Tasks (Analyze & Incremental Collection)
 │   ├── services.py      # GitHub Client, Gemini Client logic
 │   ├── urls.py
 │   └── tests.py
 ├── templates/
 │   └── card/
-│       └── card.svg     # SVG Template
+│       ├── card.svg     # SVG Template
+│       ├── placeholder.svg
+│       └── error.svg
 └── playground/          # [Existing] Refactor or Deprecate
 ```
 
-**구조 결정**: 기존 `playground`의 로직을 `backend/card/services.py` 및 `tasks.py`로 이관하여 정식 기능으로 승격합니다.
+**구조 결정**:
+1. 기존 `playground`의 로직을 `backend/card/services.py` 및 `tasks.py`로 이관하여 정식 기능으로 승격합니다.
+2. `GithubEvent` 모델을 추가하여 원본 이벤트를 영구 저장하고, 분석 시 증분 수집 및 24시간 필터링을 수행합니다.
 
 ## 복잡성 추적
 
 | 위반              | 필요한 이유            | 더 간단한 대안이 거부된 이유             |
 |-----------------|-------------------|------------------------------|
-| Celery/Redis 도입 | 비동기 분석 및 캐싱 전략 필수 | 동기 처리 시 사용자 대기 시간 발생 (UX 저하) |
+| Celery/Redis 도입 | 비동기 분석, 캐싱, Distributed Lock (중복 방지) | 동기 처리 시 사용자 대기 시간 발생 (UX 저하) |
 | SVG Template    | 동적 이미지 생성         | Pillow 등은 무겁고 디자인 수정이 어려움    |
+| Event DB 저장     | 증분 수집 및 이력 관리      | 매번 전체 API 호출 시 Rate Limit 및 비효율성 발생 |
