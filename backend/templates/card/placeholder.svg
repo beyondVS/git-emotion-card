@@ -54,6 +54,10 @@
         fill: var(--comment-color);
         text-anchor: middle;
         }
+        
+        /* Animation */
+        .pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
     </style>
 
     <rect width="100%" height="100%" class="bg-layer"/>
@@ -61,20 +65,17 @@
     <rect x="10" y="10" width="580" height="140" class="card-layer"/>
 
     <g transform="translate(30, 52)">
-        <text class="font-sans title-text">{{ result.persona_title }}</text>
+        <text class="font-sans title-text">Analyzing System...</text>
     </g>
 
-    {% if result.status_enum %}
     <g transform="translate(470, 33)">
         <rect width="100" height="24" class="badge-rect"/>
-        <text x="50" y="16" class="font-mono badge-text">{{ result.get_status_enum_display }}</text>
+        <text x="50" y="16" class="font-mono badge-text">LOADING</text>
     </g>
-    {% endif %}
 
     <line x1="30" y1="75" x2="570" y2="75" class="divider-line"/>
 
-    <text x="300" y="110" class="font-segoe comment-text">
-        <tspan x="300" dy="0">{{ result.comment|slice:":30" }}</tspan>
-        <tspan x="300" dy="1.4em">{{ result.comment|slice:"30:" }}</tspan>
+    <text x="300" y="110" class="font-segoe comment-text pulse">
+        Collecting events and generating persona...
     </text>
 </svg>

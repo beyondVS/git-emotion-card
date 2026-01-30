@@ -12,9 +12,9 @@
         --card-bg: #f6f8fa;
         --border-color: #d0d7de;
         --title-color: #24292f;
-        --badge-rect-color: #24292f;
+        --badge-rect-color: #cf222e; /* Red for Error */
         --badge-text-color: white;
-        --comment-color: #6e5494;
+        --comment-color: #cf222e; /* Red for Error */
         }
         @media (prefers-color-scheme: dark) {
         :root {
@@ -23,9 +23,9 @@
         --card-bg: #161b22;
         --border-color: #30363d;
         --title-color: #e6edf3;
-        --badge-rect-color: white;
-        --badge-text-color: #24292f;
-        --comment-color: #d2a8ff;
+        --badge-rect-color: #d96c75; /* Lighter Red for Dark Mode */
+        --badge-text-color: #0d1117;
+        --comment-color: #d96c75;
         }
         }
 
@@ -61,20 +61,17 @@
     <rect x="10" y="10" width="580" height="140" class="card-layer"/>
 
     <g transform="translate(30, 52)">
-        <text class="font-sans title-text">{{ result.persona_title }}</text>
+        <text class="font-sans title-text">System Malfunction</text>
     </g>
 
-    {% if result.status_enum %}
     <g transform="translate(470, 33)">
         <rect width="100" height="24" class="badge-rect"/>
-        <text x="50" y="16" class="font-mono badge-text">{{ result.get_status_enum_display }}</text>
+        <text x="50" y="16" class="font-mono badge-text">ERROR</text>
     </g>
-    {% endif %}
 
     <line x1="30" y1="75" x2="570" y2="75" class="divider-line"/>
 
     <text x="300" y="110" class="font-segoe comment-text">
-        <tspan x="300" dy="0">{{ result.comment|slice:":30" }}</tspan>
-        <tspan x="300" dy="1.4em">{{ result.comment|slice:"30:" }}</tspan>
+        Something went wrong. Please try again later.
     </text>
 </svg>
